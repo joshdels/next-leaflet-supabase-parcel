@@ -1,9 +1,9 @@
-import MapComponent from "@/components/map/MapClient";
+import MapContainer from "@/components/map/MapClient";
 
 export default function Home() {
   return (
     <>
-      <MapComponent />
+      <MapContainer />
     </>
   );
 }

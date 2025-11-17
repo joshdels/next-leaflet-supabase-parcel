@@ -5,16 +5,29 @@ import { useRef } from "react";
 
 const Map = dynamic(() => import("./MapComponent"), {ssr: false});
 const SetBoundary = dynamic(() =>import("./useBoundingBox"), {ssr: false});
+const GeoJSONLayer = dynamic(() => import("./useGeoJSON"), {ssr: false});
 
-export default function MapComponent() {
+
+export default function MapContainer() {
   return <Map />;
-}
+};
 
 export function MapBounding() {
-  const mapRef = useRef
+  const mapRef = useRef(null);
+
   return (
-    <MapComponent mapRef={mapRef}>
+    <Map mapRef={mapRef}>
       <SetBoundary mapRef={mapRef}/>
-    </MapComponent>
+    </Map>
   ); 
-}
+};
+
+export function AddGeoJSON() {
+  const mapRef = useRef(null);
+
+  return(
+    <Map mapRef={mapRef}>
+      <GeoJSONLayer />
+    </Map>
+  );
+};

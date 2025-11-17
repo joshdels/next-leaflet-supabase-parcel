@@ -2,10 +2,10 @@
 
   import { MapContainer, TileLayer } from 'react-leaflet'
   import "leaflet/dist/leaflet.css";
-  import type {Map as LeafletMap} from "leaflet"
+  import type {Map} from "leaflet"
 
   type MapProps = {
-    mapRef: React.RefObject<LeafletMap>;
+    mapRef: React.RefObject<Map | null>;
     children?: React.ReactNode;
   }
 
